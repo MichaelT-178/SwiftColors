@@ -2,8 +2,8 @@ const picker = new YAHOO.widget.ColorPicker("container", {
     showhsvcontrols: true,
     showhexcontrols: true,
     images: {
-        PICKER_THUMB: "../pics/picker_thumb.png",
-        HUE_THUMB: "../pics/hue_thumb.png"
+        PICKER_THUMB: "./pics/picker_thumb.png",
+        HUE_THUMB: "./pics/hue_thumb.png"
     }
 });
 

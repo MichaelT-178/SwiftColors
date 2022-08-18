@@ -12,7 +12,7 @@ html {background-color: grey; display: inline;}
     position: absolute;
     width: 80px;
     height: 51px;
-    left: 736.5px;
+    left: 793.5px;
     top: 32px;
 }
 #paragraph {
@@ -51,17 +51,10 @@ html {background-color: grey; display: inline;}
     position:relative; 
     box-sizing: border-box;
     display: block;
-    left: 35%;
+    left: 38%;
     top:-20px;
     width: 400px;
     height: 220px;
-
-}
-
-#colortext {
-    position: relative;
-    left: 265px;
-    top: 236px;
 }
 
 #link {
@@ -71,21 +64,27 @@ html {background-color: grey; display: inline;}
     color: blue;
 }
 
+#colortext {
+    position: relative;
+    left: 321px;
+    top: 236px;
+}
+
 #namecolor {
     position: relative;
-    left: 271px;
+    left: 327px;
     top: 234px;
 }
 
 #currText {
     position: relative;
-    left: 21px;
+    left: 77px;
     top: 268px;
 }
 
 #currColor {
     position: relative;
-    left: 27px;
+    left: 83px;
     top: 268px;
     outline:none;
 
@@ -104,7 +103,7 @@ html {background-color: grey; display: inline;}
 
 #gethex {
     position: relative;
-    left: 560px;
+    left: 615px;
     top: 308px;
 }
 

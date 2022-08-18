@@ -30,6 +30,10 @@ function isEmoji(str) {
     return /(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])/gi.test(str);
 }
 
+function isOnlyLetters(str) {
+    return /^[a-zA-Z]+$/.test(str);
+}
+
 document.getElementById('gethex').addEventListener("click", function(e) { 
 
     const name = document.getElementById('namecolor').value;
@@ -63,12 +67,11 @@ document.getElementById('gethex').addEventListener("click", function(e) {
         }
     }
 
-
     if (name.trim() === "") {   
         textTwo.innerText = "";
         text.innerText = "Please enter a color name!";
         timeout("text", "three");
-    } else if (!(/^[a-zA-Z]+$/.test(name)) && !isEmoji(name)) {
+    } else if (!isOnlyLetters(name) && !isEmoji(name)) {
         text.innerHTML = "";
         textTwo.innerText = "Name can only be composed of letters or emojis!";
         timeout("textOne", "three");

@@ -21,7 +21,15 @@ function convertToSwift(name, rgbString) {
 
     const string = `let ${name} = Color(red: ${red}, green: ${gr}, blue: ${bl})`;
 
-    navigator.clipboard.writeText(string);
+
+    const stringTwo = `let ${name} = UIColor(red: ${red}, green: ${gr}, blue: ${bl}, alpha: 1)`
+    const choice = document.getElementById("options").value;
+
+    if (choice === "NormalColor") {
+        navigator.clipboard.writeText(string);
+    } else {
+        navigator.clipboard.writeText(stringTwo);
+    }
 
     return {n: name, r: red, g: gr,b: bl};
 }
@@ -41,11 +49,13 @@ document.getElementById('gethex').addEventListener("click", function(e) {
 
     const color = convertToSwift(name, rgbString);
 
-    const temp = 
+    const normalColor = 
     `<div id="theCode">  
     <span id="pink">let </span><span id="white">${color.n} = </span><span id="purple">Color</span><span id="white">(</span><span id="purple">red</span><span id="white">: </span><span id="yellow">${color.r}</span><span id="white">, </span><span id="purple">green</span><span id="white">: </span><span id="yellow">${color.g}</span><span id="white">, </span><span id="purple">blue</span><span id="white">: </span><span id="yellow">${color.b}</span><span id="white">)  </span><span id="green"> //Copied to clipboard!</span>   </div>`
     
-    document.getElementById('thetext').innerHTML = temp; 
+    const UIColor = 
+    `<div id="theCodeTwo">  
+    <span id="pink">let </span><span id="white">${color.n} = </span><span id="purple">UIColor</span><span id="white">(</span><span id="purple">red</span><span id="white">: </span><span id="yellow">${color.r}</span><span id="white">, </span><span id="purple">green</span><span id="white">: </span><span id="yellow">${color.g}</span><span id="white">, </span><span id="purple">blue</span><span id="white">: </span><span id="yellow">${color.b}</span><span id="white">, </span><span id="purple">alpha</span><span id="white">: </span><span id="yellow">1</span><span id="white">)  </span><span id="green"> //Copied to clipboard!</span>   </div>`
 
     let text =  document.getElementById('thetext');
     let textTwo = document.getElementById('thetexttwo');
@@ -77,7 +87,13 @@ document.getElementById('gethex').addEventListener("click", function(e) {
         timeout("textOne", "three");
     } else {
         textTwo.innerText = "";
-        text.innerHTML = temp;
+
+        if (document.getElementById("options").value === "NormalColor") {
+            text.innerHTML = normalColor;
+        } else {
+            text.innerHTML = UIColor;
+        }
+        
         timeout("text", "six");
     }
     

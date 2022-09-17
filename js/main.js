@@ -20,8 +20,8 @@ function convertToSwift(name, rgbString) {
     const bl = (rgb[2] * num).toFixed(3);
 
     const normalString = `let ${name} = Color(red: ${red}, green: ${gr}, blue: ${bl})`;
-
     const UIString = `let ${name} = UIColor(red: ${red}, green: ${gr}, blue: ${bl}, alpha: 1)`
+
     const choice = document.getElementById("options").value;
 
     if (choice === "NormalColor") {
